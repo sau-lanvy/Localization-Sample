@@ -1,8 +1,8 @@
 version: '2'
 services:
   web:
-    container_name: 'LocalizationExt'
-    image: 'LocalizationExt'
+    container_name: 'netcore-localization'
+    image: 'netcore-localization'
     build: ./LocalizationSample/
     ports: 
       - "5000:5000"
