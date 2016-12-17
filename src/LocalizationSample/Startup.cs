@@ -34,8 +34,17 @@ namespace LocalizationSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LocalizationDBContext>(options =>
+            if (Helpers.EnvironmentHelper.DockerArguments != null && Helpers.EnvironmentHelper.DockerArguments.Count() > 0 && Helpers.EnvironmentHelper.DockerArguments[0] == "posgres")
+            {
+
+                services.AddDbContext<LocalizationDBContext>(options =>
                     options.UseNpgsql(Configuration["Data:StoreDbContext:ConnectionString"]));
+            }
+            else
+            {
+                services.AddDbContext<LocalizationDBContext>(options =>
+                    options.UseSqlServer(Configuration["Data:DefaultDbContext:ConnectionString"]));
+            }
 
             services.AddSingleton<IStringLocalizerFactory, EFStringLocalizerFactory>();
             // Add framework services.
@@ -58,6 +67,10 @@ namespace LocalizationSample
                 new CultureInfo("vi-VN"),
                 new CultureInfo("fr-FR"),
                 new CultureInfo("pt-BR"),
+                new CultureInfo("es-ES"),
+                new CultureInfo("jp-JP"),
+                new CultureInfo("zh"),
+                new CultureInfo("zh-CN"),
             };
             app.UseRequestLocalization(new RequestLocalizationOptions
             {

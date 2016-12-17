@@ -51,6 +51,7 @@ RUN apt-get update -qq \
 # Set environment variables
 ENV ASPNETCORE_URLS="http://*:5000"
 ENV ASPNETCORE_ENVIRONMENT="Development"
+ENV DB_HOSTNAME="posgres"
 
 # Copy files to app directory
 COPY . /app
@@ -64,8 +65,8 @@ RUN ["dotnet", "restore"]
 # Build app
 RUN ["dotnet", "build"]
 
-#donet ef migrations add InitialCreate
-RUN ["dotnet", "ef", "migrations", "add", "InitialCreate"]
+#dotnet ef migrations add InitialCreate
+#RUN ["dotnet", "ef", "migrations", "add", "InitialCreate"]
 # Open up port
 EXPOSE 5000
 

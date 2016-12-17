@@ -1,4 +1,4 @@
-﻿{
+{
   "dependencies": {
     "Microsoft.NETCore.App": {
       "type": "platform",
@@ -25,7 +25,8 @@
     "Microsoft.EntityFrameworkCore.Tools": {
       "version": "1.1.0-preview4-final",
       "type": "build"
-    }
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.1"
   },
 
   "tools": {

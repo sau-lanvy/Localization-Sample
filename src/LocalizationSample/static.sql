@@ -8,7 +8,7 @@ INSERT INTO "Cultures" ("Id", "Name") VALUES (7, 'zh-CN');
 
 INSERT INTO "Resources" ("CultureId", "Key", "Value") VALUES (1, 'Hello {0}!', 'Chào {0}!');
 INSERT INTO "Resources" ("CultureId", "Key", "Value") VALUES (2, 'Hello {0}!', 'Bonjour {0}!');
-INSERT INTO "Resources" ("CultureId", "Key", "Value") VALUES (3, 'Hello {0}!', 'Chào {0}!');
+INSERT INTO "Resources" ("CultureId", "Key", "Value") VALUES (3, 'Hello {0}!', 'Olá {0}!');
 INSERT INTO "Resources" ("CultureId", "Key", "Value") VALUES (4, 'Hello {0}!', 'Hola {0}!');
 INSERT INTO "Resources" ("CultureId", "Key", "Value") VALUES (5, 'Hello {0}!', '????? {0}!');
 INSERT INTO "Resources" ("CultureId", "Key", "Value") VALUES (6, 'Hello {0}!', '?? {0}!');
