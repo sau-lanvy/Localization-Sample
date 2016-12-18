@@ -66,7 +66,7 @@ RUN ["dotnet", "restore"]
 RUN ["dotnet", "build"]
 
 #dotnet ef migrations add InitialCreate
-#RUN ["dotnet", "ef", "migrations", "add", "InitialCreate"]
+RUN ["dotnet", "ef", "migrations", "add", "InitialCreate"]
 # Open up port
 EXPOSE 5000
 

@@ -34,7 +34,7 @@ namespace LocalizationSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            if (Helpers.EnvironmentHelper.DockerArguments != null && Helpers.EnvironmentHelper.DockerArguments.Count() > 0 && Helpers.EnvironmentHelper.DockerArguments[0] == "posgres")
+            if (Helpers.EnvironmentHelper.DockerArguments != null && Helpers.EnvironmentHelper.DockerArguments.Count() > 0)
             {
 
                 services.AddDbContext<LocalizationDBContext>(options =>
